@@ -72,3 +72,19 @@ PostgreSQL database container
 > docker-compose exec db /bin/bash
 
 Docker Compose's `exec` subcommand takes the name of a service (which are defined in our docker-compose.yml file in this repo) and a command to run in that container. In this case, we're pointing it to the `bash` program inside the `/bin` folder in the container. Bash is a common command line interface program.
+
+### Django commands
+
+Running commands for Django, like starting a new app, or running migrations, can be done from inside your container.
+
+Run a shell in the container:
+
+> docker-compose exec django /bin/bash
+
+The shell will open up in the folder where your source code has been mounted, so you can run your commands directly from this folder.
+
+> python manage.py createsuperuser
+> python manage.py startapp myapp
+> python manage.py makemigrations
+
+Etc. See the Django documentation for commands that can be run.
