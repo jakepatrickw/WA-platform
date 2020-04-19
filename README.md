@@ -57,17 +57,17 @@ You may want to get into your running container, say to install an npm or pip pa
 
 > docker-compose exec _service_ /bin/bash
 
-Replace 'service' with the corresponding service name from the docker-compose.yml file in this repo.
+Make sure you are in the WA-platform folder that you cloned on your computer. Replace '_service_' with the corresponding service name from the docker-compose.yml file in this repo. For example:
 
-Django backend container:
+Django backend container
 
 > docker-compose exec django /bin/bash
 
-Node client frontend container:
+Node client frontend container
 
 > docker-compose exec frontend /bin/bash
 
-PostgreSQL database container:
+PostgreSQL database container
 
 > docker-compose exec db /bin/bash
 
