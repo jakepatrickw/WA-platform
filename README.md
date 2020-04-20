@@ -101,3 +101,21 @@ The shell will open up in the folder where your source code and package.json has
 
 > npm install --save @material-ui/core
 > npm run test
+
+### Getting an authorization token for signing API requests
+
+If you want to hit our API, either because you are building out a service on the frontend, or you want to test it through a program like Postman, you will need a JWT token to sign the request.
+
+First, make sure you have created a user in Django. You only need to do this once. Shell into your Django container:
+
+> docker-compose exec django /bin/bash
+
+Run the following command
+
+> python manage.py createsuperuser
+
+This will take you through creating a username and password for your Django user. Once you have that information, you can run the following from the command line on your computer (not in a container):
+
+> curl --header "Content-Type: application/json" -X POST http://127.0.0.1:8000/api/token/obtain/ --data '{"username":"whatever_you_chose","password":"whatever_you_chose"}'
+
+This will give you back a JWT token that you can set on the Authorization header for HTTP requests.
