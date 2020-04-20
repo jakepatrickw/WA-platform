@@ -88,3 +88,16 @@ The shell will open up in the folder where your source code has been mounted, so
 > python manage.py makemigrations
 
 Etc. See the Django documentation for commands that can be run.
+
+### NPM commands
+
+Running commands you would normally run on your computer, like installing npm packages, can be run in your container.
+
+Run a shell in the container:
+
+> docker-compose exec frontend /bin/bash
+
+The shell will open up in the folder where your source code and package.json has been mounted, so you can run your commands directly from this folder.
+
+> npm install --save @material-ui/core
+> npm run test
