@@ -20,13 +20,13 @@ services:
         restart: on-failure:5
         depends_on:
             - db
-    frontend:
-        build: ../WA-front-end
-        command: bash -c "npm install -y && npm start"
-        volumes:
-            - ../WA-front-end:/usr/local/watergun-assassin-frontend
-        ports:
-            - "1234:3000"
+    # frontend:
+    #     build: ../WA-front-end
+    #     command: bash -c "npm install -y && npm start"
+    #     volumes:
+    #         - ../WA-front-end:/usr/local/watergun-assassin-frontend
+    #     ports:
+    #         - "1234:3000"
 
 volumes:
     node-modules:
